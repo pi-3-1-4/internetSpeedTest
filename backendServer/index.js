@@ -1,13 +1,19 @@
 const express = require('express');
-
+const {exec} = require('child_process');
+const { stdout } = require('process');
 const app = new express();
 const port = 5000;
 
-app.get('/',(req,res)=>{
-    res.status(200).send("hi i am working at 5000")
-})
-app.get('/home',(req,res)=>{
-    res.status(200).send("home page")
+app.set('view engine','ejs')
+// app.get('/',(req,res)=>{
+//     res.render('index',{speed:" "})
+// })
+app.get('/getspeedtest',(req,res)=>{
+    exec(`fast --upload --json`,(err,stdout,stderr)=>{
+        res.json({
+            report: stdout
+        })
+    })
 })
 
 app.listen(port, ()=>{

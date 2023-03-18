@@ -12,3 +12,6 @@ trigger the command : node int-speed or int-speed.js
 The output of upload speed and download speed will be shown in the terminal itself.
 
 Thank you for Checking your internet Speed .
+
+fast cli has been added opn 18mar and the command to check the download speed is "fast"
+to get both speed "fast "
