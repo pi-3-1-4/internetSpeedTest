@@ -5,9 +5,9 @@ const app = new express();
 const port = 5000;
 
 app.set('view engine','ejs')
-// app.get('/',(req,res)=>{
-//     res.render('index',{speed:" "})
-// })
+app.get('/',(req,res)=>{
+    res.render('index',{speed:" "})
+})
 app.get('/getspeedtest',(req,res)=>{
     exec(`fast --upload --json`,(err,stdout,stderr)=>{
         res.json({

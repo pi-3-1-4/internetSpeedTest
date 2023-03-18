@@ -20,9 +20,9 @@ async function getUploadSpeed(){
           'Content-Type': 'application/json',
         },
       };
-      const fileSizeInBytes = 2000000
+      const fileSizeInBytes = 20000
       const speed = await testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
       console.log("Upload Speed=>",speed);
 }
-
+0
 getUploadSpeed()
